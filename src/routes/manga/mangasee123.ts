@@ -14,9 +14,8 @@ const routes = async (fastify: FastifyInstance, options: RegisterOptions) => {
 
   fastify.get('/:query', async (request: FastifyRequest, reply: FastifyReply) => {
     const query = (request.params as { query: string }).query;
-
     const res = await mangasee123.search(query);
-
+    console.log(res);
     reply.status(200).send(res);
   });
 
